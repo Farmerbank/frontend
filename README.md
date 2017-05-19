@@ -1,6 +1,6 @@
-# Grommet Vertical Narrative Infographic
+# Farmer Bank frontend
 
-#### [Demo](https://grommet-vertical-vanilla.herokuapp.com/)
+#### [Demo](https://farmerbank.nl/)
 
 This is the source code for a Grommet based universal single page. To run the website execute the following:
 
