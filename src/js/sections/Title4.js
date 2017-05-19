@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-
+import React, {Component} from 'react';
 
 import classnames from 'classnames';
 
@@ -18,90 +17,96 @@ import Home from 'grommet/components/icons/base/Home';
 
 const CLASS_ROOT = "title-section";
 
-// export default function Title4() {
-//   let classes = classnames([
-//     CLASS_ROOT,
-//     `${CLASS_ROOT}--left-align`,
-//     `${CLASS_ROOT}--column-reverse`
-//   ]);
-
 export default class Title4 extends Component {
 
+    constructor() {
+        super();
 
-  constructor () {
-    super();
+        this._onSubmit = this._onSubmit.bind(this);
+        this._onBeneficiaryChange = this._onBeneficiaryChange.bind(this);
+        this._onAmountChange = this._onAmountChange.bind(this);
 
-    this._onSubmit = this._onSubmit.bind(this);
-    this._onItemChange = this._onItemChange.bind(this);
-    this._onStatusChange = this._onStatusChange.bind(this);
-
-    this.state = {
-      item: undefined,
-      status: undefined
-    };
-  }
-
-  _onSubmit (event) {
-    event.preventDefault();
-    if (this.state.item) {
-      this.props.onSubmit({
-        item: this.state.item,
-        status: this.state.status || 'ok'
-      });
+        this.state = {
+            submitted: false,
+            submitMsg: '',
+            Amount: 0,
+            Beneficiary: ''
+        };
     }
-  }
 
-  _onItemChange (event) {
-    this.setState({item: event.target.value});
-  }
+    _onSubmit(event) {
+        event.preventDefault();
+        console.log('Send to the api', this.state);
 
-  _onStatusChange (event) {
-    this.setState({status: event.target.value});
-  }
+        const data = {Amount: this.state.Amount, Beneficiary: this.state.Amount};
 
-  render () {
-    let classes = classnames([
-      CLASS_ROOT,
-      `${CLASS_ROOT}--left-align`,
-      `${CLASS_ROOT}--column-reverse`
-    ]);
+        fetch('https://farmerbank.nl/transactions/Micro', { body: JSON.stringify(data), method: 'post'}).then((result) => {
+            console.log('result: ', result);
+            this.setState({submitted:true, submitMsg: 'Just kidding ;-)'});
+        }).catch(() => {
+            this.setState({submitted:true, submitMsg: 'Something went wrong.'});
+        });
+    }
 
-    return (
-      <InfographicSection className={classes} direction="row" colorIndex="neutral-1">
-        <Box className={`${CLASS_ROOT}__col-2`} direction="column" alignContent="start">
-          <Headline className={`${CLASS_ROOT}__title`} size="large" strong={true}>Get FREE money!</Headline>
-          <Headline className={`${CLASS_ROOT}__desc`} size="small">All Farmer Bank custumers receive free money. It really is free</Headline>
-          <Box direction="row" responsive={false} align="center" wrap={true}>
+    _onBeneficiaryChange(event) {
+        this.setState({Beneficiary: event.target.value});
+    }
 
-          <Form onSubmit={this._onSubmit}>
-              <header><h1>Money dispenser</h1></header>
-              <FormFields>
-                <fieldset>
-                  <FormField label="Name" htmlFor="taskInput"
-                    help="what's your name?">
-                    <input id="taskInput" name="name" type="text"
-                      ref="taskInput" onChange={this._onItemChange} />
-                  </FormField>
-                  <FormField label="Money" htmlFor="taskInput"
-                    help="how much € do you want?">
-                    <input id="taskInput" name="money" type="number"
-                      ref="taskInput" onChange={this._onItemChange} />
-                  </FormField>
-                </fieldset>
-              </FormFields>
-              <Footer pad={{vertical: 'medium'}}>
-                <Button label="Make it rain!" primary={true}
-                  onClick={this._onSubmit} type="submit"/>
-              </Footer>
-            </Form>
+    _onAmountChange(event) {
+        this.setState({Amount: event.target.value});
+    }
 
-          </Box>
-          <Heading className={`${CLASS_ROOT}__stat-desc`} tag="h4" strong={true}>in expected Sharing Economy revenues by 2025</Heading>
-        </Box>
-        <Box className={`${CLASS_ROOT}__col-1`} pad={{vertical:"medium"}}>
-          <Home size="huge" colorIndex="light-1" />
-        </Box>
-      </InfographicSection>
-    );
-  }
+    render() {
+        const {submitted, submitMsg} = this.state;
+        let classes = classnames([
+            CLASS_ROOT,
+            `${CLASS_ROOT}--left-align`,
+            `${CLASS_ROOT}--column-reverse`
+        ]);
+
+        return (
+            <InfographicSection className={classes} direction="row" colorIndex="neutral-1">
+                <Box className={`${CLASS_ROOT}__col-2`} direction="column" alignContent="start">
+                    <Headline className={`${CLASS_ROOT}__title`} size="large" strong={true}>Get FREE money!</Headline>
+                    <Headline className={`${CLASS_ROOT}__desc`} size="small">All Farmer Bank custumers receive free
+                        money. It really is free</Headline>
+                    <Box direction="row" responsive={false} align="center" wrap={true}>
+                        {!submitted &&
+                        <Form onSubmit={this._onSubmit}>
+                            <header><h1>Money dispenser</h1></header>
+                            <FormFields>
+                                <fieldset>
+                                    <FormField label="Name" htmlFor="taskInput"
+                                               help="what's your name?">
+                                        <input id="taskInput" name="name" type="text"
+                                               ref="taskInput" onChange={this._onBeneficiaryChange}/>
+                                    </FormField>
+                                    <FormField label="Money" htmlFor="taskInput"
+                                               help="how much € do you want?">
+                                        <input id="taskInput" name="money" type="number"
+                                               ref="taskInput" onChange={this._onAmountChange}/>
+                                    </FormField>
+                                </fieldset>
+                            </FormFields>
+                            <Footer pad={{vertical: 'medium'}}>
+                                <Button label="Make it rain!" primary={true}
+                                        onClick={this._onSubmit} type="submit"/>
+                            </Footer>
+                        </Form>}
+                        {submitted &&
+                            <Heading className={`${CLASS_ROOT}__stat-desc`} tag="h4" strong={true}>{submitMsg}</Heading>
+                        }
+
+
+                    </Box>
+                    {!submitted &&
+                    <Heading className={`${CLASS_ROOT}__stat-desc`} tag="h4" strong={true}>in expected Sharing Economy
+                        revenues by 2025</Heading>}
+                </Box>
+                <Box className={`${CLASS_ROOT}__col-1`} pad={{vertical: "medium"}}>
+                    <Home size="huge" colorIndex="light-1"/>
+                </Box>
+            </InfographicSection>
+        );
+    }
 };
