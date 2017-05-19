@@ -23,8 +23,8 @@ export default function Title2() {
         <Cart size="huge" colorIndex="grey-1" />
       </Box>
       <Box className={`${CLASS_ROOT}__col-2`} direction="column" alignContent="start">
-        <Headline className={`${CLASS_ROOT}__title`} size="large" strong={true}>Recent Studies</Headline>
-        <Headline className={`${CLASS_ROOT}__desc`} size="small">take care of your banking needs while you cook, watch television, make breakfast of even do the dishes</Headline>
+        <Headline className={`${CLASS_ROOT}__title`} size="large" strong={true}>Overwhelming success</Headline>
+        <Headline className={`${CLASS_ROOT}__desc`} size="small">Recent Studies show that people really need to take care of their banking needs while they're cooking, watching television, or even when doing the dishes</Headline>
         <Box direction="row" responsive={false} align="center">
           <Value
             value={97}
@@ -34,7 +34,7 @@ export default function Title2() {
           />
         </Box>
         <Heading className={`${CLASS_ROOT}__stat-desc`} tag="h4" strong={true}>
-          of users are very enthusiastic about Farmer Bank
+          customer experience rating
         </Heading>
       </Box>
     </InfographicSection>

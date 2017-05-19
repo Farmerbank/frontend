@@ -17,7 +17,7 @@ export default function End(props) {
         </Box>
         <Box>
           <Headline size="large">We beleive Farmer Bank will be
-            a disruptive innovation in the bankink industry</Headline>
+            a disruptive innovation in the banking industry</Headline>
           <Button href="mailto:info@farmerbank.nl" label="Contact us"
             primary={true} />
         </Box>

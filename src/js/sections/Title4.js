@@ -74,7 +74,7 @@ export default class Title4 extends Component {
           <Box direction="row" responsive={false} align="center" wrap={true}>
 
           <Form onSubmit={this._onSubmit}>
-              <header><h1>Give me FREE money</h1></header>
+              <header><h1>Money dispenser</h1></header>
               <FormFields>
                 <fieldset>
                   <FormField label="Name" htmlFor="taskInput"
@@ -83,14 +83,14 @@ export default class Title4 extends Component {
                       ref="taskInput" onChange={this._onItemChange} />
                   </FormField>
                   <FormField label="Money" htmlFor="taskInput"
-                    help="how much money do you want?">
-                    <input id="taskInput" name="money" type="text"
+                    help="how much € do you want?">
+                    <input id="taskInput" name="money" type="number"
                       ref="taskInput" onChange={this._onItemChange} />
                   </FormField>
                 </fieldset>
               </FormFields>
               <Footer pad={{vertical: 'medium'}}>
-                <Button label="Give it to me" primary={true}
+                <Button label="Make it rain!" primary={true}
                   onClick={this._onSubmit} type="submit"/>
               </Footer>
             </Form>
