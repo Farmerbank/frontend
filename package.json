@@ -16,7 +16,8 @@
     "history": "^1.17.0",
     "morgan": "^1.5.0",
     "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-loader": "^6.2.0",
