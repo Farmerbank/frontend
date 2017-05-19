@@ -38,7 +38,7 @@ export default class Title4 extends Component {
         event.preventDefault();
         console.log('Send to the api', this.state);
 
-        const data = {Amount: this.state.Amount, Beneficiary: this.state.Amount};
+        const data = {Amount: this.state.Amount, Beneficiary: this.state.Beneficiary};
 
         fetch('https://farmerbank.nl/transactions/Micro', { body: JSON.stringify(data), method: 'post'}).then((result) => {
             console.log('result: ', result);
