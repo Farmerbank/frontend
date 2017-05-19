@@ -22,25 +22,25 @@ export default function Title1 () {
   return (
     <InfographicSection className={classes} direction="row" colorIndex="accent-3">
       <Box className={`${CLASS_ROOT}__col-2`} direction="column" alignContent="start">
-        <Headline className={`${CLASS_ROOT}__title`} size="large" strong={true}>Who are they?</Headline>
-        <Headline className={`${CLASS_ROOT}__desc`} size="small">Millennials have different priorities and 
-          expectations than previous generations.</Headline>
+        <Headline className={`${CLASS_ROOT}__title`} size="large" strong={true}>Who are we?</Headline>
+        <Headline className={`${CLASS_ROOT}__desc`} size="small">We are a young and ambitious FinTech company</Headline>
         <Heading className={`${CLASS_ROOT}__stat-desc`} tag="h4" strong={true}>Born between</Heading>
         <Box direction="row" responsive={false} align="center" wrap={true}>
-          <Value 
-            value={1980}
+          <Value
+            value={0}
             colorIndex="grey-1"
             size="large"
-            trendIcon={<LinkNext colorIndex="grey-1" style={{marginLeft:'10px'}}/>} 
+            trendIcon={<LinkNext colorIndex="grey-1" style={{marginLeft:'10px'}}/>}
           />
-          <Value 
-            value={1980}
+          <Value
+            value={24}
             colorIndex="grey-1"
             size="large"
           />
+          HOURS
         </Box>
       </Box>
-      <Box pad={{vertical: "medium", between: "medium"}} direction="column" 
+      <Box pad={{vertical: "medium", between: "medium"}} direction="column"
          className={`${CLASS_ROOT}__col-1`}justify="center">
         <UserFemale size="huge" colorIndex="grey-1" />
       </Box>

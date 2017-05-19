@@ -31,7 +31,7 @@ export default class Home extends Component {
   }
 
   _onProgress(progress) {
-    if (progress !== this.state.progress) 
+    if (progress !== this.state.progress)
       this.setState({progress: progress});
   }
 
@@ -45,9 +45,6 @@ export default class Home extends Component {
     return (
       <Article ref="article" className="home" onProgress={this._onProgress}
         scrollStep={false} controls={false}>
-        <Box style={{textAlign:'center', zIndex:300}}>
-          For demonstration purposes only.
-        </Box>
         <Nav progress={this.state.progress} />
 
         <Content layout={this.state.layout} />
