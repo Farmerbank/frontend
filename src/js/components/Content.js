@@ -11,7 +11,8 @@ import Source from './Source';
 import ChartHeader from './ChartHeader';
 import Title1 from '../sections/Title1';
 import Title2 from '../sections/Title2';
-import Title3 from '../sections/Title3';
+// import Title3 from '../sections/Title3';
+import Title4 from '../sections/Title4';
 import Intro from '../sections/Intro';
 import LargerCohert from '../sections/LargerCohert';
 import FirstDigitalNatives from '../sections/FirstDigitalNatives';
@@ -40,7 +41,7 @@ export default class Content extends Component {
       <Intro />
         <Title1 />
 
-        <InfographicSection className="infographic__section infographic__section--1" 
+        <InfographicSection className="infographic__section infographic__section--1"
           colorIndex="light-1">
           <Tabs responsive={false} justify="center">
 
@@ -56,7 +57,7 @@ export default class Content extends Component {
 
             <Tab title="First Digital Natives">
               <Box className="infographic__slide" full="horizontal">
-                <ChartHeader text="Millennials turn to online activities for fun and 
+                <ChartHeader text="Millennials turn to online activities for fun and
                   entertainment." />
                 <FirstDigitalNatives layout={this.props.layout} />
                 <Source text="Prosper Insights & Analytics for the Media Behavior
@@ -66,7 +67,7 @@ export default class Content extends Component {
 
             <Tab title="Social and Connected">
               <Box className="infographic__slide">
-                <ChartHeader text="More Millennials use technology to communicate about 
+                <ChartHeader text="More Millennials use technology to communicate about
                   products services and brands." />
                 <SocialAndConnected />
                 <Source text="Prosper Insights & Analytics for the Media Behavior
@@ -86,7 +87,7 @@ export default class Content extends Component {
 
         <Title2 />
 
-        <InfographicSection className="infographic__section infographic__section--2" 
+        <InfographicSection className="infographic__section infographic__section--2"
           colorIndex="light-2">
           <Tabs responsive={false} justify="center">
 
@@ -100,7 +101,7 @@ export default class Content extends Component {
 
             <Tab title="Clicking to Buy">
               <Box className="infographic__slide">
-                <ChartHeader text="% of respondents who purchased something online in the 
+                <ChartHeader text="% of respondents who purchased something online in the
                   last 12 months." />
                 <ClickingToBuy layout={this.props.layout} />
                 <Source text="Office for National Statistics, United Kingdom" />
@@ -109,24 +110,24 @@ export default class Content extends Component {
 
             <Tab title="Searching for Value">
               <Box className="infographic__slide">
-                <ChartHeader text="Price and Quality create brand loyalty among Millennials 
+                <ChartHeader text="Price and Quality create brand loyalty among Millennials
                   more than other generations." />
                 <SearchingForValue layout={this.props.layout} />
-                <Source text="AIMIA Inc. Born this Way: US 
+                <Source text="AIMIA Inc. Born this Way: US
                   Millennial Loyalty Survey ©2012" />
               </Box>
             </Tab>
           </Tabs>
         </InfographicSection>
 
-        <Title3 />
+        <Title4 />
 
-        <InfographicSection className="infographic__section infographic__section--3" 
+        <InfographicSection className="infographic__section infographic__section--3"
           colorIndex="light-1">
           <Tabs responsive={false} justify="center">
             <Tab title="The Renter Generation">
               <Box className="infographic__slide">
-                <ChartHeader text="A growing number of older millennials are choosing to 
+                <ChartHeader text="A growing number of older millennials are choosing to
                   rent, not buy." />
                 <RenterGeneration />
                 <Source text="US Census Bureau" />

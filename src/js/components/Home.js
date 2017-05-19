@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Responsive from 'grommet/utils/Responsive';
 
 import Article from 'grommet/components/Article';
-import Box from 'grommet/components/Box';
+// import Box from 'grommet/components/Box';
 import Nav from './Nav';
 import Content from './Content';
 
