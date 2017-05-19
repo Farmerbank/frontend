@@ -74,26 +74,23 @@ export default class Title4 extends Component {
           <Box direction="row" responsive={false} align="center" wrap={true}>
 
           <Form onSubmit={this._onSubmit}>
-              <header><h1>Add Task</h1></header>
+              <header><h1>Give me FREE money</h1></header>
               <FormFields>
                 <fieldset>
-                  <FormField label="Task" htmlFor="taskInput"
-                    help="what's to be done?">
-                    <input id="taskInput" name="task" type="text"
+                  <FormField label="Name" htmlFor="taskInput"
+                    help="what's your name?">
+                    <input id="taskInput" name="name" type="text"
                       ref="taskInput" onChange={this._onItemChange} />
                   </FormField>
-                  <FormField label="Status" htmlFor="statusInput">
-                    <select id="statusInput" name="status"
-                      onChange={this._onStatusChange}>
-                      <option value="ok">Done</option>
-                      <option value="warning">Due Soon</option>
-                      <option value="critical">Past Due</option>
-                    </select>
+                  <FormField label="Money" htmlFor="taskInput"
+                    help="how much money do you want?">
+                    <input id="taskInput" name="money" type="text"
+                      ref="taskInput" onChange={this._onItemChange} />
                   </FormField>
                 </fieldset>
               </FormFields>
               <Footer pad={{vertical: 'medium'}}>
-                <Button label="OK" primary={true}
+                <Button label="Give it to me" primary={true}
                   onClick={this._onSubmit} type="submit"/>
               </Footer>
             </Form>
